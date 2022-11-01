@@ -51,7 +51,6 @@ userRouter.post('/forgetpassword', async (req, res) => {
       return result;
     }
     const newPassword = updatePassword(6);
-    // const result = Math.random().toString(36).substring(2,7);
     if (user) {
       await User.updateOne({ password: newPassword });
       await sendMail(email, 'New Password', `${newPassword}`);
