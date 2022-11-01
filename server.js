@@ -34,6 +34,5 @@ app.get('/', (req, res) => {
   res.send('web server running');
 });
 
-// console.log(Math.floor(Math.random() * 100000));
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server running on ${port}`));
