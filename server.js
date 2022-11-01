@@ -25,10 +25,10 @@ app.use(
     origin: '*',
   })
 );
+app.use('/', userRouter);
 app.get('/', (req, res) => {
   res.send('web server running');
 });
-app.use('/', userRouter);
 
 // console.log(Math.floor(Math.random() * 100000));
 const port = process.env.PORT || 5000;
