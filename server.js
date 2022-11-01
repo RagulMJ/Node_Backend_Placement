@@ -5,8 +5,7 @@ import mongoose from 'mongoose';
 import userRouter from './routes/userRoutes.js';
 
 dotenv.config();
-const mongoURL =
-  'mongodb+srv://Ragul_praveen:86dNsPHzVmXB3Tj9@cluster0.a8imc.mongodb.net/placement?retryWrites=true&w=majority';
+const mongoURL = process.env.MONGO_URL;
 
 mongoose
   .connect(mongoURL)

@@ -5,7 +5,7 @@ export const generateToekn = (user) => {
     {
       email: user.email,
     },
-    'somethingsecret',
+    process.env.SECRET_KEY,
     {
       expiresIn: '1D',
     }
@@ -16,7 +16,7 @@ export const isAuth = (req, res, next) => {
   const auth = req.headers.auth;
   // console.log(auth);
   if (auth) {
-    jwt.verify(auth, 'somethingsecret', (err, decode) => {
+    jwt.verify(auth, process.env.SECRET_KEY, (err, decode) => {
       if (err) {
         res.status(401).send({ message: 'unauthorized' });
       } else {
