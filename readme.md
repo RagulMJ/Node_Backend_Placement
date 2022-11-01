@@ -13,3 +13,6 @@ Backend URL for ForgetPassword : https://backend-node-rj.herokuapp.com/forgetpas
 
 Backend URL for SendMail : https://backend-node-rj.herokuapp.com/mailsend
 ![ALT text](/IMG/mailsend.png)
+
+Unauthorization Error
+![ALT text](/IMG/Error.png)
