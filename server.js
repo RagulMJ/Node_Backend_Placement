@@ -1,8 +1,10 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import userRouter from './routes/userRoutes.js';
 
+dotenv.config();
 const mongoURL =
   'mongodb+srv://Ragul_praveen:86dNsPHzVmXB3Tj9@cluster0.a8imc.mongodb.net/placement?retryWrites=true&w=majority';
 
@@ -23,8 +25,11 @@ app.use(
     origin: '*',
   })
 );
+app.get('/', (req, res) => {
+  res.send('web server running');
+});
 app.use('/', userRouter);
 
-console.log(Math.floor(Math.random() * 100000));
+// console.log(Math.floor(Math.random() * 100000));
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server running on ${port}`));
